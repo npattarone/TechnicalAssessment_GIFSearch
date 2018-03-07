@@ -5,7 +5,7 @@ import TrendList from './components/TrendList/trendList';
 import SearchBox from './components/SearchBox/searchBox';
 import SearchResult from './components/SearchResult/searchResult';
 import { getGIFsByFilter, getTrend } from './helpers/api';
-import { getGIFsFormat } from './helpers/beautifyContent';
+import { getGIFsFormat, getGIFsFormatTrend } from './helpers/beautifyContent';
 
 const styles = {
   trendlist: {
@@ -86,7 +86,7 @@ class App extends Component {
     getTrend()
       .then(result => {
         if (result.data) {
-          let beautifyContent = getGIFsFormat(result.data);
+          let beautifyContent = getGIFsFormatTrend(result.data);
           this.setState({ trend: beautifyContent })
         }
       })

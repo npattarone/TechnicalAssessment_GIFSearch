@@ -1,5 +1,5 @@
 import React from 'react';
-import { getGIFsFormat } from './beautifyContent';
+import { getGIFsFormat , getGIFsFormatTrend} from './beautifyContent';
 
 let gifResultFromAPI;
 
@@ -213,7 +213,7 @@ beforeEach(() => {
     }];
 });
 
-it('beautifyContent function should return a determined format', () => {
+it('beautifyContent function should return a determined format for search result', () => {
     const result = getGIFsFormat(gifResultFromAPI);
 
     const expectedResult = [{
@@ -221,6 +221,18 @@ it('beautifyContent function should return a determined format', () => {
         name: gifResultFromAPI[0].title,
         src: gifResultFromAPI[0].images.preview_gif.url,
         favorite: false
+    }];
+
+    expect(result).toEqual(expectedResult);
+});
+
+it('beautifyContent function should return a determined format for trend list', () => {
+    const result = getGIFsFormatTrend(gifResultFromAPI);
+
+    const expectedResult = [{
+        id: gifResultFromAPI[0].id,
+        name: gifResultFromAPI[0].title,
+        src: gifResultFromAPI[0].images.preview_gif.url
     }];
 
     expect(result).toEqual(expectedResult);
