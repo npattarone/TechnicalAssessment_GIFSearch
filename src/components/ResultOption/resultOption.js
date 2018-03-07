@@ -27,7 +27,7 @@ function ResultOption(props) {
                 {props.result.name}
             </div>
             {
-                props.result.favorite ?
+                props.result.favorite != undefined ?
                     <div className="col-2">
                         <i
                             onClick={() => props.addFavorite(props.result.id)}
@@ -48,7 +48,7 @@ ResultOption.propTypes = {
         src: PropTypes.string.isRequired,
         favorite: PropTypes.bool
     }),
-    addFavorite: PropTypes.func.isRequired
+    addFavorite: PropTypes.func
 };
 
 export default ResultOption;
