@@ -18,8 +18,8 @@ function Favorites(props) {
                             <img src={fav.src} style={{ width: '100%' }}
                                 onClick={() => props.open(fav)} />
                         </div>
-                        <div className="col-4">{fav.name}</div>
-                        <div className="col-2">
+                        <div className="col-5">{fav.name}</div>
+                        <div className="col-3">
                             <button
                                 onClick={() => props.removeFavorite(fav)}
                                 style={{ border: 'none', backgroundColor: 'lightseagreen' }} title="It's my favorite!">

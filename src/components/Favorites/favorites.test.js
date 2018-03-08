@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Favorites from './favorites';
-import ResultOption from '../ResultOption/resultOption';
 
 let wrapper, mockResults, removeFn, openFn;
 
@@ -14,34 +13,28 @@ beforeEach(() => {
 
     openFn = jest.fn();
     removeFn = jest.fn();
-    wrapper = shallow(<Favorites favorites={mockResults} open={openFn} removeFavorite={removeFn} />);
+
+    wrapper = shallow(<Favorites
+        favorites={mockResults}
+        open={openFn}
+        removeFavorite={removeFn} />);
 });
 
 afterEach(() => {
     openFn.mockReset();
     removeFn.mockReset();
-  });
-
-it('should render at least one ResultOption', () => {
-    expect(wrapper.first(ResultOption).length).toEqual(1);
 });
 
-it('should call `props.open` when <img> is clicked', () => {
+it('should load as much images as favorites are', () => {
     const img = wrapper.first('img');
 
-    img.simulate('click');
-
-    expect(openFn.mock.calls.length).toEqual(1);
-    expect(openFn.mock.calls[0][0]).toEqual(result);
+    expect(wrapper.find('.col-2').length).toEqual(3);
 });
 
-it('should call `props.removeFavorite` when <button> is clicked', () => {
+it('should load as much buttons as favorites are', () => {
     const button = wrapper.first('button');
 
-    button.simulate('click');
-
-    expect(removeFn.mock.calls.length).toEqual(1);
-    expect(removeFn.mock.calls[0][0]).toEqual(result);
+    expect(wrapper.find('.col-3').length).toEqual(3);
 });
 
 
