@@ -9,7 +9,10 @@ function TrendList(props) {
             <div>
                 {
                     props.trendList.map(gif => (
-                        <ResultOption key={gif.id} result={gif} />
+                        <ResultOption
+                            key={gif.id}
+                            result={gif}
+                            open={props.open} />
                     ))
                 }
             </div>

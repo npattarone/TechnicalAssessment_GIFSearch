@@ -5,15 +5,22 @@ import ResultOption from '../ResultOption/resultOption';
 function SearchResult(props) {
     return (
         <div>
-            <h2>Results</h2>
             {
-                props.results.map(r => (
-                    <ResultOption
-                        key={r.id}
-                        result={r}
-                        addFavorite={props.addFavorite} />
-                ))
+                props.results.length ?
+                    <h2>Results</h2> :
+                    null
             }
+            <div>
+                {
+                    props.results.map(gif => (
+                        <ResultOption
+                            key={gif.id}
+                            result={gif}
+                            addFavorite={props.addFavorite}
+                            open={props.open} />
+                    ))
+                }
+            </div>
         </div>
     )
 }
