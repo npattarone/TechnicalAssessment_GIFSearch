@@ -28,16 +28,17 @@ At first sight, you will be seeing a top 10 trending list on the left, and on th
 
 ## Test
 
-- Open a command line window
-- Navigate until your cloned folder location
-- Run the command [npm](https://www.npmjs.com/): `npm test`
-- You should see something like this:
+1) Open a command line window
+2) Navigate until your cloned folder location
+3) Run the command [npm](https://www.npmjs.com/): `npm test`
+4) You should see something like this:
 
 ![Test Results](./public/tests.png)
 
-- You are free to add more or change them to improve coverage 
+5) You are free to add more or change them to improve coverage 
 
 ## Contact 
 
 - Natalia Pattarone
 - nataliapattarone@gmail.com
+- Skype ID: natalia.pattarone
